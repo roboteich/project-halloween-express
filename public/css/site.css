@@ -1,0 +1,13 @@
+body {
+	overflow: hidden;
+	background-color: #000;
+	color:red;
+	font-size:24;
+	font-weight: bold;
+	position:relative;
+}
+
+#output {
+	position:absolute;
+	float:left;
+}

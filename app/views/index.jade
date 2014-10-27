@@ -1,0 +1,14 @@
+extends layouts/default
+
+block device_styles
+	link(rel='stylesheet',type='text/css',href='/css/desktop.css')
+block device_head_js
+	script(type="text/javascript", src="/js/main.js")
+	script(type="text/javascript").
+		var SOCKET = location.origin;
+
+block content
+	#section-header
+		h1 Project Halloween
+	#section-output
+		#output

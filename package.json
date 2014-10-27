@@ -1,0 +1,38 @@
+{
+    "name": "projectHalloween",
+    "description": "Goofing",
+    "version": "0.1.0",
+    "private": false,
+    "author": "Ross Teichner",
+    "engines": {
+        "node": "0.10.x",
+        "npm": "1.2.x"
+    },
+    "scripts": {
+        "start": "node node_modules/grunt-cli/bin/grunt",
+        "postinstall": "bower install"
+    },
+    "dependencies": {
+        "express": "latest",
+        "express-device" : "0.3.7",
+        "socket.io" : "0.9.16",
+        "jade": "latest",
+        "crypto": "latest",
+        "underscore": "latest",
+        "async": "latest",
+        "view-helpers": "latest",
+        "forever": "latest",
+        "bower": "latest",
+        "grunt": "latest",
+        "grunt-cli": "latest",
+        "grunt-env": "latest",
+        "tessel":"~0.3.15",
+        "ambient-attx4":"~0.2.4"
+    },
+    "devDependencies": {
+        "grunt-contrib-watch": "latest",
+        "grunt-contrib-jshint": "latest",
+        "grunt-nodemon": "latest",
+        "grunt-concurrent": "latest"
+    }
+}

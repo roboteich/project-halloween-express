@@ -1,0 +1,26 @@
+{
+  "name": "projecthalloweenExpressDevice",
+  "version": "0.0.0",
+  "description": "",
+  "keywords": [],
+  
+    "homepage": "https://github.com/roboteich/projecthalloweenExpressDevice",
+    "bugs": "https://github.com/roboteich/projecthalloween/issues",
+    "author": {
+      "name": "Ross Teichner",
+      "email": "",
+      "url": "https://github.com/roboteich"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git://github.com/roboteich/projecthalloweenExpressDevice.git"
+    },
+  
+  "dependencies": {
+    "tessel":"~0.3.15",
+    "ambient-attx4":"~0.2.4"
+  },
+  "engines": {
+    "node": ">=0.8.0"
+  }
+}

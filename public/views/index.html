@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Monster Munchies</title>
+        <meta property="og:title" content="Monster Munchies" />
+        <meta property="og:description" content="Fight the invading monsters by teaching the benefits of balanced nutrition." />
+        <meta property="og:image" content="" />
+        <meta property="og:site" content="monstermunchies" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <!--  TODO: Lock Portrait Orientation -->
+        <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale = 1.0; user-scalable=0;" />
+        
+        <link rel="stylesheet" type="text/css" href="/css/reset.css" />
+        <link rel="stylesheet" type="text/css" href="/css/site.css" />
+
+        <!-- %REPLACE_JS_MIN% -->
+        <script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+        <script type="text/javascript" src="/js/TimelineLite/TweenMax.min.js"></script>
+        <script type="text/javascript" src="/js/TimelineLite/TimelineLite.min.js"></script>
+        <script type="text/javascript" src="/js/plugins/animateSprite.js"></script>
+        <script type="text/javascript" src="/js/site.js"></script>
+        <script type="text/javascript" src="/js/desktop.js"></script>
+        <!-- %REPLACE_JS_MIN% -->
+    </head>
+    <body>
+		<div class="site-container" align="center">
+			<div class="desktop-connect-view">
+				<div class="desktop-copy">Welcome to Monster Munchies, please begin by typing in the following URL to your mobile browser: <span class="tinyUrl">NEED URL</span></div>
+			</div>
+
+			<div class="game-background"></div>
+			<div class="game-background-tunnel"></div>
+			<div class="game-background-inner-tunnel"></div>
+			
+			<div class="desktop-game-view game-view">
+				<div id="animated-score">100</div>
+				<div id="score">0000</div>
+				<div id="lives">
+					<div class="live"></div>
+					<div class="live"></div>
+					<div class="live"></div>
+				</div>
+				
+				<div id="wall"></div>
+				
+				<div class="monsters">
+					<div class="monster3" id="row2"></div>
+					<div class="monster1" id="row1"></div>
+				</div>
+			</div>
+
+			<input type="button" id="connect-mobile" value="connect mobile device" />
+		</div>
+	</body>
+</html>
