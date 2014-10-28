@@ -12,6 +12,6 @@ This quick experiment projects spooky video when triggered by sound from a usb c
 3. Connect the Tessel to an available USB port on your workstation
 4. From the project root directory run ```npm install``` and ```bower install```
 5. Then cd into the "device" directory and run ```npm install```
-6. Start the server by entering the command ```grunt```
+6. Start the server by entering the command ```node server.js```
 7. Load the UI in a webbrowser at [http://localhost:3000](http://localhost:3000)
 
