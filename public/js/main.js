@@ -10,6 +10,9 @@ jQuery(function($){
     var soundLevel = 0;
 
     var outputEl = $('#output');
+    var videoEl = $('#video');
+    var $player;
+    var player;
     
     //controllers
     var actions = {
@@ -26,9 +29,30 @@ jQuery(function($){
     //------------------------------------
 
       function init(){
+        initVideo();
         bindSocket();
         bindWindow();
         resize();
+      }
+
+      function initVideo(){
+
+        player = document.createElement('video');
+        $player = $(player);
+
+        $player.attr({
+          src: './vid/demo.mov',
+          autoPlay:false,
+          controls:false,
+          loop:false
+        });
+
+
+        $player.on('ended', handleVideoEnd);
+        videoEl.append($player);
+
+        $player.hide();
+
       }
 
     //------------------------------------
@@ -51,6 +75,11 @@ jQuery(function($){
     function bindWindow(){
 
       $(window).on('resize', resize);
+      $(window).on('keyup', function(evt){
+          if(evt.keyCode == 32){
+            handleSpacePress(evt);
+          }
+      });
 
     }
 
@@ -67,7 +96,6 @@ jQuery(function($){
     }
 
     function registerRemoteAction(path, action){
-      console.log('registerRemoteAction', path, action);
        socket.on(path, function(data){ action(data); });
     }
 
@@ -107,6 +135,7 @@ jQuery(function($){
     }
 
 
+
     //------------------------------------
     //  View States
     //------------------------------------
@@ -130,7 +159,15 @@ jQuery(function($){
       outputEl.css({
         top: (h - outputEl.height())/2,
         left: (w - outputEl.width())/2,
-      })
+      });
+
+      videoEl.css({
+        width:w,
+        height:h
+      });
+
+      player.videoWidth = player.width = w;
+      player.videoHeight = player.height = h;
 
     }
 
@@ -139,7 +176,11 @@ jQuery(function($){
     //------------------------------
 
     function handleSpike(data){
-      draw('spike' + data);
+      if(!player.playing){
+        draw('spike' + data);
+        $player.fadeIn();
+        player.play();
+      }
     }
 
     function handleTrigger(data){
@@ -165,6 +206,17 @@ jQuery(function($){
       }else{
         listen();
       }
+    }
+
+    function handleVideoEnd(){
+      $player.fadeOut();
+      player.pause();
+      player.currentTime = 0;
+    }
+
+    function handleSpacePress(evt){
+      socket.emit('retrain', {});
+      handleVideoEnd();
     }
 
     //-------------------------------------

@@ -13,26 +13,16 @@
         "postinstall": "bower install"
     },
     "dependencies": {
-        "express": "latest",
+        "express": "3.4.8",
         "express-device" : "0.3.7",
         "socket.io" : "0.9.16",
-        "jade": "latest",
-        "crypto": "latest",
-        "underscore": "latest",
+        "jade": "1.1.5",
+        "crypto": "0.0.3",
+        "underscore": "1.5.2",
         "async": "latest",
-        "view-helpers": "latest",
-        "forever": "latest",
+        "view-helpers": "0.1.4",
         "bower": "latest",
-        "grunt": "latest",
-        "grunt-cli": "latest",
-        "grunt-env": "latest",
         "tessel":"~0.3.15",
         "ambient-attx4":"~0.2.4"
-    },
-    "devDependencies": {
-        "grunt-contrib-watch": "latest",
-        "grunt-contrib-jshint": "latest",
-        "grunt-nodemon": "latest",
-        "grunt-concurrent": "latest"
     }
 }

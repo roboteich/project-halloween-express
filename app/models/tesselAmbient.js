@@ -34,6 +34,7 @@ var TesselAmbientTrigger = function(io){
 	//------------------------------
 
 	function init(){
+		io.on('connection', handleNewSocket);
 		_self.connect();
 	}
 
@@ -45,7 +46,8 @@ var TesselAmbientTrigger = function(io){
 			// `device.on('message', function (msg) { ... })` receives an event
 		    // when an object is received from Tessel.
 
-		    tesselDevice.on('message', handleMessage);  
+		    tesselDevice.on('message', handleMessage); 
+		    
 
 	}
 
@@ -61,8 +63,6 @@ var TesselAmbientTrigger = function(io){
 		//console.log('_connect', deviceOptions, tessel);
 		try {
 			tessel.findTessel(deviceOptions, function(err, device){
-
-				console.log('on_connect', err, device);
 
 				if(err){ 
 					handleConnectError(err);
@@ -166,12 +166,16 @@ var TesselAmbientTrigger = function(io){
 		}
 	}
 
+	function handleRetrain(){
+		_training = 0;
+		_trainedValues = [];
+	}
+
 	function handleTrigger(data){
 		io.emit('trigger', data);
 	}
 
 	function handleSpike(data){
-		console.log('spike', io);
 		io.sockets.emit('spike', data);
 	}
 
@@ -211,6 +215,10 @@ var TesselAmbientTrigger = function(io){
 
 	function handleModuleError(err){
 		io.emit('moduleError', err);
+	}
+
+	function handleNewSocket(socket){
+		socket.on('retrain', handleRetrain);
 	}
 
 	//------------------------------
