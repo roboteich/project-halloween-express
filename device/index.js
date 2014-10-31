@@ -26,6 +26,12 @@ ambient.on('ready', function () {
 
   // });
 
+  ambient.on("sound", function(data){
+    if('object' === (typeof data)){
+      process.send({type:'sound', data:data});
+    }
+  });
+
   setInterval(function(){
 
     ambient.getSoundLevel(function(err, data){

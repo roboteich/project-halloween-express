@@ -1,6 +1,7 @@
 'use strict';
 
 var tessel = require('tessel');
+var _ = require('underscore');
 var script = require.resolve('../../device');
 var EventEmitter = require('events').EventEmitter;
 var util = require('util');
@@ -151,6 +152,9 @@ var TesselAmbientTrigger = function(io){
 			case 'trigger':
 				handleTrigger(message.data);
 				break;
+			case 'sound':
+				handleSound(message.data);
+				break;
 			case 'soundLevel':
 				handleSoundLevel(message.data);
 				break;
@@ -199,14 +203,21 @@ var TesselAmbientTrigger = function(io){
 			console.log('trained', _mean, _trainedValues);
 
 		}else{
+			
 
-			if(data > _mean && (data-_mean > 0.001)){
+			if(data > _mean && (data-_mean > 0.0015)){
 				handleSpike(data);
+				console.log('spike' + data);
 			}
 
 		}
 
 		io.emit('soundLevel', data);
+	}
+
+	function handleSound(data){
+		//var mean = _.reduce(data, function(memo, value){ return memo+value })/data.length;
+		//console.log('sound' + mean);
 	}
 
 	function handleSoundError(err){

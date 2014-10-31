@@ -20,7 +20,7 @@ var app = express(),
     port = process.env.PORT || config.port,
     http = require('http'),
     server = http.createServer(app).listen(port),
-    io = sio.listen(server),
+    io = sio.listen(server);
     ambientSocket = require('./app/models/tesselAmbient.js')(io);
     
 

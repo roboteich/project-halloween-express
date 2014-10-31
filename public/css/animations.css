@@ -1,0 +1,119 @@
+
+/*
+==============================================
+floating
+==============================================
+*/
+
+.floating{
+	animation-name: floating;
+	-webkit-animation-name: floating;
+
+	animation-duration: 3s;	
+	-webkit-animation-duration: 3s;
+
+	animation-iteration-count: infinite;
+	-webkit-animation-iteration-count: infinite;
+}
+
+@keyframes floating {
+	0% {
+		transform: translateY(0%);	
+	}
+	50% {
+		transform: translateY(8%);	
+	}	
+	100% {
+		transform: translateY(0%);
+	}			
+}
+
+@-webkit-keyframes floating {
+	0% {
+		-webkit-transform: translateY(0%) 	
+	}
+	50% {
+		-webkit-transform: translateY(8%);	
+	}	
+	100% {
+		-webkit-transform: translateY(0%);
+	}			
+}
+
+/*
+==============================================
+tossing
+==============================================
+*/
+
+.tossing{
+	animation-name: tossing;
+	-webkit-animation-name: tossing;	
+
+	animation-duration: 5s;	
+	-webkit-animation-duration: 5s;
+
+	animation-iteration-count: infinite;
+	-webkit-animation-iteration-count: infinite;
+}
+
+@keyframes tossing {
+	0% {
+		transform: 	
+	}
+	50% {
+		transform: rotate(4deg);
+	}
+	100% {
+		transform: rotate(-4deg);	
+	}						
+}
+
+@-webkit-keyframes tossing {
+	0% {
+		-webkit-transform: rotate(-4deg);	
+	}
+	50% {
+		-webkit-transform: rotate(4deg);
+	}
+	100% {
+		-webkit-transform: rotate(-4deg);	
+	}				
+}
+
+/*
+==============================================
+tossing
+==============================================
+*/
+
+span.output {
+	animation-name: growing;
+	-webkit-animation-name: growing;
+	animation-duration: 2s;
+	-webkit-animation-duration: 2s;
+	animation-direction:alternate;
+	-webkit-animation-direction:alternate;
+	animation-iteration-count: infinite;
+	-webkit-animation-iteration-count: infinite;
+}
+
+
+@keyframes growing {
+	0% {
+		transform: scaleX(1) scaleY(1)	
+	}
+	100% {
+		transform: scaleX(1) scaleY(1);
+	}						
+}
+
+@-webkit-keyframes growing {
+	0% {
+		-webkit-transform: scaleX(1) scaleY(1)	
+	}
+	100% {
+		-webkit-transform: scaleX(1.5) scaleY(1.5);
+	}					
+}
+
